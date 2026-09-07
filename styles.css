@@ -65,3 +65,28 @@
 @media(max-width:767px){.location{grid-template-columns:1fr;gap:32px}.mapFrame{height:clamp(300px,72vw,440px);border-width:6px}.locationCopy{max-width:560px;margin-inline:auto}.location .button{max-width:100%}}
 @media(max-width:479px){.mapFrame{height:clamp(280px,86vw,380px);border-radius:18px}.location{padding-inline:16px}.location .button{width:100%;justify-content:center}}
 @media(max-width:359px){.mapFrame{height:280px}.location{padding-inline:12px}}
+
+/* Mid-size tablets need the same spacious single-column composition as phones.
+   This prevents the headline, event artwork, and prediction image from competing
+   for the narrow horizontal space between 768px and 900px. */
+@media(min-width:768px) and (max-width:900px){
+  .nav>div>a:not(.navCta){display:none}
+  .hero{grid-template-columns:1fr;gap:42px;min-height:auto;padding:118px 6vw 78px;text-align:center}
+  .heroCopy{max-width:680px;margin-inline:auto}
+  .hero h1{font-size:clamp(54px,8vw,68px)}
+  .intro{margin-inline:auto}
+  .heroActions{justify-content:center}
+  .heroVisual{width:min(100%,430px);margin-inline:auto}
+  .scrollHint{display:none}
+  .vote{grid-template-columns:1fr;gap:42px;text-align:center}
+  .voteCopy{margin-inline:auto}
+  .voteImage{width:min(100%,430px);margin-inline:auto;transform:none}
+}
+
+/* Keep short mobile landscape screens usable without a portrait-sized hero. */
+@media(orientation:landscape) and (max-height:520px) and (max-width:767px){
+  .nav{position:absolute}
+  .hero{min-height:auto;padding-top:88px;padding-bottom:46px;gap:26px}
+  .heroVisual{width:min(52vw,290px)}
+  .section{padding-block:58px}
+}
